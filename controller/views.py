@@ -106,7 +106,12 @@ def insertTcpOverridingModule(request):
     if request.method == "POST":
         value = request.POST.get("value")
         print("TCP Overriding:", value)
-        return HttpResponse("Success", status=201)
+        if value == True:
+            subprocess.run(["bash", "./tcp_override/tcp_override.sh"], check=True)
+            return HttpResponse("Success", status=201)
+        else:
+            subprocess.run(["bash", "./tcp_override/remove.sh"], check=True)
+            return HttpResponse("Success", status=201)
     else:
         return HttpResponse("Only POST requests allowed", status=302)
 
@@ -115,7 +120,11 @@ def insertDelyaQueue(request):
     if request.method == "POST":
         value = request.POST.get("value")
         print("Delay Overriding:", value)
-        return HttpResponse("Success", status=201)
+        if value == True:
+            subprocess.run(["bash", "./delay_queue/add_delay.sh"], check=True)
+            return HttpResponse("Success", status=201)
+        else:
+            return HttpResponse("No switch off functionality", status=201)
     else:
         return HttpResponse("Only POST requests allowed", status=302)
 
@@ -124,6 +133,13 @@ def applyTtlMaximization(request):
     if request.method == "POST":
         value = request.POST.get("value")
         print("TTL Overriding:", value)
-        return HttpResponse("Success", status=201)
+        if value == True:
+            subprocess.run(["bash", "./ttl_prevent/ttl_maximize.sh"], check=True)
+            subprocess.run(
+                ["bash", "./ttl_prevent/inject_kernel_object.sh"], check=True
+            )
+            return HttpResponse("Success", status=201)
+        else:
+            return HttpResponse("No switch off functionality", status=201)
     else:
         return HttpResponse("Only POST requests allowed", status=302)

@@ -1,3 +1,4 @@
+#!/bin/sh
 # Function to handle SIGINT signal
 cleanup() {
     echo "Caught SIGINT, cleaning up..."
