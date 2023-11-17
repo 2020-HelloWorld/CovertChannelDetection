@@ -16,19 +16,20 @@ mark = 10
 print("Done")
 # Create a class for each IP source with the random delay
 for record in data:
-    src_ip, dst_ip, max_delay = record["SRC IP"], record["DST IP"], record["MAX DELAY"]
-    print(src_ip)
-    mark = mark + 1
-    subprocess.run(
-        f"tc class add dev {NETCARD} parent 1:1 classid 1:{mark} htb rate 100mbit",
-        shell=True,
-    )
+    if record["isCovert"] == True:
+        src_ip, dst_ip, max_delay = record["src"], record["dst"], record["max_delay"]
+        print(src_ip)
+        mark = mark + 1
+        subprocess.run(
+            f"tc class add dev {NETCARD} parent 1:1 classid 1:{mark} htb rate 100mbit",
+            shell=True,
+        )
 
-    subprocess.run(
-        f"tc filter add dev {NETCARD} parent 1: protocol ip u32 match ip src {src_ip} match ip dst {dst_ip} flowid 1:{mark}",
-        shell=True,
-    )
-    subprocess.run(
-        f"tc qdisc add dev {NETCARD} parent 1:{mark} handle {mark}: netem delay {max_delay//2}ms {max_delay//2}ms",
-        shell=True,
-    )
+        subprocess.run(
+            f"tc filter add dev {NETCARD} parent 1: protocol ip u32 match ip src {src_ip} match ip dst {dst_ip} flowid 1:{mark}",
+            shell=True,
+        )
+        subprocess.run(
+            f"tc qdisc add dev {NETCARD} parent 1:{mark} handle {mark}: netem delay {max_delay//2}ms {max_delay//2}ms",
+            shell=True,
+        )
