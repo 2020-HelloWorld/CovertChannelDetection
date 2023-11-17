@@ -643,6 +643,7 @@
                 .then((data) => {
                   console.log("Response data:", JSON.parse(data));
                   var tableBody = $("tbody");
+                  tableBody.empty();
                   // Iterate through the received JSON data and append rows to the table
                   JSON.parse(data).data.forEach(function (item) {
                     // Create a new table row
