@@ -1,4 +1,5 @@
 import os
+
 l = [
     "dependencies.sh",
     "initialize.sh",
@@ -12,7 +13,8 @@ l = [
     "ttl_detect/layer1_analysis.sh",
     "ttl_detect/layer1_detect.sh",
     "ttl_prevent/cleanup.sh",
-    "ttl_prevent/inject_kernel_object.sh"
+    "ttl_prevent/inject_kernel_object.sh",
+    "ttl_prevent/ttl_maximize.sh",
 ]
 
 for i in l:

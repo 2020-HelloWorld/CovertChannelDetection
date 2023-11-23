@@ -125,7 +125,7 @@ def insertDelyaQueue(request):
     if request.method == "POST":
         value = request.POST.get("value")
         print("Delay Overriding:", value)
-        if value == True:
+        if value == "true":
             subprocess.run(["bash", "./delay_queue/add_delay.sh"], check=True)
             return HttpResponse("Success", status=201)
         else:
@@ -138,7 +138,7 @@ def applyTtlMaximization(request):
     if request.method == "POST":
         value = request.POST.get("value")
         print("TTL Overriding:", value)
-        if value == True:
+        if value == "true":
             subprocess.run(["bash", "./ttl_prevent/ttl_maximize.sh"], check=True)
             subprocess.run(
                 ["bash", "./ttl_prevent/inject_kernel_object.sh"], check=True
