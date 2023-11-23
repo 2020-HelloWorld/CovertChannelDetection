@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import subprocess
+from executable import process_scripts
+
+process_scripts()
+subprocess.call(["sh", "./dependencies.sh"])
+subprocess.call(["sh", "./initialize.sh"])
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
