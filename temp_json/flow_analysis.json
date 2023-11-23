@@ -1,0 +1,162 @@
+[
+    {
+        "flow_id": [
+            "10.0.2.5",
+            "-",
+            "218.248.112.1"
+        ],
+        "unique": 5,
+        "multimod": 1,
+        "multimod2": 5,
+        "widthave": 47.74973918632812,
+        "autocorr": 26344.5361,
+        "c": 1.1428571428571428,
+        "nrPacketsMode": 0.2857142857142857,
+        "nrPackets": 8,
+        "maxDelay_ms": 5132.098098098098
+    },
+    {
+        "flow_id": [
+            "218.248.112.1",
+            "-",
+            "10.0.2.5"
+        ],
+        "unique": 5,
+        "multimod": 1,
+        "multimod2": 5,
+        "widthave": 47.74887590752812,
+        "autocorr": 26344.860720999997,
+        "c": 1.1428571428571428,
+        "nrPacketsMode": 0.2857142857142857,
+        "nrPackets": 8,
+        "maxDelay_ms": 5132.0360360360355
+    },
+    {
+        "flow_id": [
+            "10.0.2.5",
+            "-",
+            "151.101.130.137"
+        ],
+        "unique": 7,
+        "multimod": 2,
+        "multimod2": 7,
+        "widthave": 37.680459628986576,
+        "autocorr": 12537.952728999999,
+        "c": 1.2857142857142858,
+        "nrPacketsMode": 0.25,
+        "nrPackets": 9,
+        "maxDelay_ms": 54890.48048048048
+    },
+    {
+        "flow_id": [
+            "151.101.130.137",
+            "-",
+            "10.0.2.5"
+        ],
+        "unique": 4,
+        "multimod": 2,
+        "multimod2": 4,
+        "widthave": 46.88217238031784,
+        "autocorr": 12528.3249,
+        "c": 0.8571428571428571,
+        "nrPacketsMode": 0.4,
+        "nrPackets": 6,
+        "maxDelay_ms": 48727.852852852855
+    },
+    {
+        "flow_id": [
+            "10.0.2.5",
+            "-",
+            "185.125.190.48"
+        ],
+        "unique": 4,
+        "multimod": 2,
+        "multimod2": 4,
+        "widthave": 0.15616698597601122,
+        "autocorr": 0.12673599999999996,
+        "c": 0.7142857142857143,
+        "nrPacketsMode": 0.25,
+        "nrPackets": 5,
+        "maxDelay_ms": 155.14414414414412
+    },
+    {
+        "flow_id": [
+            "185.125.190.48",
+            "-",
+            "10.0.2.5"
+        ],
+        "unique": 4,
+        "multimod": 1,
+        "multimod2": 4,
+        "widthave": 0.10693209392663869,
+        "autocorr": 0.03312399999999999,
+        "c": 0.7142857142857143,
+        "nrPacketsMode": 0.25,
+        "nrPackets": 5,
+        "maxDelay_ms": 13.243243243243244
+    },
+    {
+        "flow_id": [
+            "10.0.2.5",
+            "-",
+            "52.168.112.67"
+        ],
+        "unique": 24,
+        "multimod": 2,
+        "multimod2": 24,
+        "widthave": 13.358771778479639,
+        "autocorr": 31393.815488999993,
+        "c": 6.0,
+        "nrPacketsMode": 0.21951219512195122,
+        "nrPackets": 42,
+        "maxDelay_ms": 43480.228228228225
+    },
+    {
+        "flow_id": [
+            "52.168.112.67",
+            "-",
+            "10.0.2.5"
+        ],
+        "unique": 30,
+        "multimod": 2,
+        "multimod2": 30,
+        "widthave": 14.238773466678271,
+        "autocorr": 31303.517184000004,
+        "c": 5.428571428571429,
+        "nrPacketsMode": 0.16216216216216217,
+        "nrPackets": 38,
+        "maxDelay_ms": 43106.89189189189
+    },
+    {
+        "flow_id": [
+            "10.0.2.5",
+            "-",
+            "13.107.213.58"
+        ],
+        "unique": 9,
+        "multimod": 2,
+        "multimod2": 9,
+        "widthave": 17.882118761845152,
+        "autocorr": 5647.071609,
+        "c": 2.2857142857142856,
+        "nrPacketsMode": 0.3333333333333333,
+        "nrPackets": 16,
+        "maxDelay_ms": 37410.36736736737
+    },
+    {
+        "flow_id": [
+            "13.107.213.58",
+            "-",
+            "10.0.2.5"
+        ],
+        "unique": 8,
+        "multimod": 2,
+        "multimod2": 8,
+        "widthave": 20.518172836035212,
+        "autocorr": 5642.413456,
+        "c": 1.8571428571428572,
+        "nrPacketsMode": 0.25,
+        "nrPackets": 13,
+        "maxDelay_ms": 37320.720720720725
+    }
+]

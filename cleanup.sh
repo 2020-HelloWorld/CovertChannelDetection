@@ -1,11 +1,10 @@
 #!/bin/sh
-cd -
-cd "./tcp_override"
-make rm
-# make clean
-cd -
-cd "./ttl_prevent"
-make rm
-# make clean
-cd -
-rm -rf temp_json
+# a=`ls`
+# echo ${a}
+rm -r ${PWD}/temp_json
+mkdir -p -- "temp_json"
+rm -r ${PWD}/images
+mkdir -p -- "images"
+mkdir -p -- "images/output"
+python3 ${PWD}/cleanup.py
+mkdir -p -- "temp_json"

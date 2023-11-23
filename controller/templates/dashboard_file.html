@@ -635,6 +635,22 @@
                 },
               })
                 .then((response) => {
+                  clearInterval(clock.interval);
+                  $(".count").text(0);
+                  $(".clock").removeAttr("style");
+
+                  // GB
+                  $(".clock-wrap").css({
+                    display: "none",
+                  });
+                  $(".input-btn").css({
+                    display: "block",
+                  });
+                  $(".table__wrap").css({
+                    display: "flex",
+                    "justify-content": "center",
+                    "align-items": "center",
+                  });
                   if (!response.ok) {
                     throw new Error("Network response was not ok");
                   }

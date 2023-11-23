@@ -1,7 +1,7 @@
 CC = gcc
 LIBS = -lpcap -ljson-c
 
-SRC = Flows.c
+SRC = flow_capture.c
 TARGET = packet_capture
 
 all: $(TARGET)

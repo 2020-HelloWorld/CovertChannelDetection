@@ -1,0 +1,1 @@
+cmd_/home/seed/CovertChannelDetection/ttl_prevent/prevent_ttl.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id  -T ./scripts/module-common.lds -o /home/seed/CovertChannelDetection/ttl_prevent/prevent_ttl.ko /home/seed/CovertChannelDetection/ttl_prevent/prevent_ttl.o /home/seed/CovertChannelDetection/ttl_prevent/prevent_ttl.mod.o;  true

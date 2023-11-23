@@ -10,8 +10,6 @@ cleanup() {
     exit 1
 }
 
-cd -
 # Trap SIGINT and call the cleanup function
 trap cleanup SIGINT
-./delay_detect/packet_capture > "./temp_json/layer2_logs.txt" 
-cd -
+${PWD}/delay_detect/packet_capture > "${PWD}/temp_json/layer2_logs.txt" 

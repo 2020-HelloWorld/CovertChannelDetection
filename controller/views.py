@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, HttpResponse
 import subprocess, threading
-import os, json
+import os, json, time
 
 
 # Create your views here.
@@ -17,7 +17,9 @@ def startFlowAnalysis(request):
 
         # Clear all the previous data
         subprocess.call(["sh", "./cleanup.sh"])
-        os.system("python3 ./cleanup.py")
+        subprocess.call(["sh", "./ttl_prevent/cleanup.sh"])
+        subprocess.call(["sh", "./tcp_override/cleanup.sh"])
+        # os.system("python3 ./cleanup.py")
 
         # Start new analysis
         print("Start Detection:", value)
@@ -55,14 +57,16 @@ def startFlowAnalysis(request):
             thread2.join()
 
         def analyse_capture():
+            print("analysing capture")
             subprocess.run(["bash", "./delay_detect/layer2_analysis.sh"], check=True)
             subprocess.run(["bash", "./ttl_detect/layer1_analysis.sh"], check=True)
 
-        if value == True:
+        if value == "true":
             data = []
 
             try:
                 capture_data()
+                # time.sleep(300)
                 analyse_capture()
 
             except Exception as e:
@@ -94,6 +98,7 @@ def startFlowAnalysis(request):
                             "type": "TTL",
                         }
                     )
+            print(data)
             return JsonResponse({"data": data}, status=201)
         else:
             return HttpResponse("False received", status=201)
@@ -106,7 +111,7 @@ def insertTcpOverridingModule(request):
     if request.method == "POST":
         value = request.POST.get("value")
         print("TCP Overriding:", value)
-        if value == True:
+        if value == "true":
             subprocess.run(["bash", "./tcp_override/tcp_override.sh"], check=True)
             return HttpResponse("Success", status=201)
         else:

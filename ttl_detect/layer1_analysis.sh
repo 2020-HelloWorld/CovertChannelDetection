@@ -1,4 +1,5 @@
 #!/bin/sh
-cd -
-python3 ./ttl_detect/layer1_analysis.py
-cd -
+# echo "Script executed from: ${PWD}"
+# BASEDIR=$(dirname $0)
+# echo "Script location: ${BASEDIR}"
+python3 ${PWD}/ttl_detect/process_ttl_deviation.py

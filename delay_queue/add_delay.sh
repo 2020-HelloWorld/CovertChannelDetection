@@ -1,4 +1,2 @@
 #!/bin/sh
-cd -
-python3 ./delay_queue/add_delay.sh
-cd -
+python3 ${PWD}/delay_queue/add_delay.py

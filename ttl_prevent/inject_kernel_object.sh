@@ -1,4 +1,2 @@
 #!/bin/sh
-cd -
-python3 ./ttl_prevent/inject_kernel_object.py
-cd -
+python3 ${PWD}/ttl_prevent/inject_kernel_object.py

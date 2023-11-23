@@ -1,0 +1,1 @@
+cmd_/home/seed/CovertChannelDetection/ttl_prevent/prevent_ttl.mod := { echo  /home/seed/CovertChannelDetection/ttl_prevent/prevent_ttl.o; echo; } > /home/seed/CovertChannelDetection/ttl_prevent/prevent_ttl.mod
